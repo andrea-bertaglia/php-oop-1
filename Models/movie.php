@@ -11,7 +11,16 @@ class Movie
     private string $language;
     private string $img_path;
     private float $vote_avg;
-    // private Genre $genres;
+    public Genre $genre;
+
+    // public function __construct(int $id, string $title, string $overview, int $year, string $language)
+    // {
+    //     $this->id         = $id;
+    //     $this->title      = $title;
+    //     $this->overview   = $overview;
+    //     $this->year       = $year;
+    //     $this->language   = $language;
+    // }
 
     // setter/getter di id
     public function setId($id_number)
@@ -38,7 +47,7 @@ class Movie
     {
         $this->overview = $overview;
     }
-    public function get()
+    public function getOverview()
     {
         return $this->overview;
     }

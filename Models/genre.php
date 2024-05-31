@@ -2,5 +2,15 @@
 
 class Genre
 {
-    private array $genre;
+    private string $genre;
+
+    // setter/getter di genre
+    public function setGenre($genre)
+    {
+        $this->genre = $genre;
+    }
+    public function getGenre()
+    {
+        return "prova";
+    }
 }
