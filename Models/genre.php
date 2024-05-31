@@ -11,6 +11,6 @@ class Genre
     }
     public function getGenre()
     {
-        return "prova";
+        return $this->genre;
     }
 }
