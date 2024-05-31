@@ -5,13 +5,11 @@ require_once 'Models/movie.php';
 require_once 'Models/genre.php';
 
 // setter genre
-$genre1 = new Genre;
-$genre1->setGenre('Fantascienza');
-$genre2 = new Genre;
-$genre2->setGenre('Drammatico');
-$genre3 = new Genre;
-$genre3->setGenre('Comico');
+$genre_movie1 = new Genre;
+$genre_movie1->setGenre('Fantasy', 'Avventura', '');
 
+$genre_movie2 = new Genre;
+$genre_movie2->setGenre('Drammatico', 'Guerra', 'Classico');
 
 //  setter dati primo movie
 $movie1 = new Movie;
@@ -22,18 +20,18 @@ $movie1->setYear(2001);
 $movie1->setLanguage('it');
 $movie1->setImgPath('https://pad.mymovies.it/filmclub/2002/01/011/locandina.jpg');
 $movie1->setVoteAvg(4.5);
-$movie1->genre = $genre1;
+$movie1->genre = $genre_movie1;
 
 //  setter dati secondo movie
 $movie2 = new Movie;
 $movie2->setId(1002);
-$movie2->setTitle('Avatar');
-$movie2->setOverview("L'ex marine Jake Sully è stato reclutato per una missione sul pianeta Pandora con lo scopo di recuperare risorse naturali in esaurimento sulla Terra. Inaspettatamente si ritrova a voler proteggere il mondo magico al quale si sente stranamente legato.");
-$movie2->setYear(2010);
+$movie2->setTitle('La Vita è Bella');
+$movie2->setOverview("Durante la dittatura fascista, Guido Orefice, giovane ebreo trasferitosi nella campagna toscana, conosce una maestra elementare, Dora, e con lei costruisce una famiglia. L'aggravarsi delle Leggi Razziali e i rastrellamenti nazisti portano l'uomo ad essere deportato in campo di concentramento con il figlioletto Giosuè. Per proteggere il piccolo dagli orrori dello sterminio, Guido costruisce eroicamente un elaborato mondo di vertiginose fantasie.");
+$movie2->setYear(1997);
 $movie2->setLanguage('it');
-$movie2->setImgPath('https://www.postermania.it/77651-thickbox_default/locandina-avatar-2-la-via-dell-acqua-james-cameron-worthington-zoe-saldana-b35.jpg');
-$movie2->setVoteAvg(4.7);
-$movie2->genre = $genre2;
+$movie2->setImgPath('https://www.cgtv.it/wp-content/uploads/2023/01/LOC1_3690.jpg');
+$movie2->setVoteAvg(4.9);
+$movie2->genre = $genre_movie2;
 
 // getter dati primo movie
 var_dump($movie1->getId());
