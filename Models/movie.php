@@ -1,26 +1,24 @@
 <?php
 
-// creo la classe Movie
+// Creo la classe Movie
 class Movie
 {
-
     private int $id;
     private string $title;
     private string $overview;
+    private string $director;
     private int $year;
     private string $language;
     private string $img_path;
     private float $vote_avg;
     public Genre $genre;
+    public Actor $cast;
 
-    // public function __construct(int $id, string $title, string $overview, int $year, string $language)
-    // {
-    //     $this->id         = $id;
-    //     $this->title      = $title;
-    //     $this->overview   = $overview;
-    //     $this->year       = $year;
-    //     $this->language   = $language;
-    // }
+    // istianzio cast con classe actor
+    public function __construct()
+    {
+        $this->cast = new Actor();
+    }
 
     // setter/getter di id
     public function setId($id_number)
@@ -50,6 +48,16 @@ class Movie
     public function getOverview()
     {
         return $this->overview;
+    }
+
+    // setter/getter di director
+    public function setDirector($director)
+    {
+        $this->director = $director;
+    }
+    public function getDirector()
+    {
+        return $this->director;
     }
 
     // setter/getter di year
