@@ -13,17 +13,20 @@ class Movie
     private float $vote_avg;
     public Genre $genre;
     public Actor $cast;
+    public $counter_id;
 
-    // istianzio cast con classe actor
+    // istianzio cast con classe actor e resetto il contatore id
     public function __construct()
     {
         $this->cast = new Actor();
+        $this->counter_id = 1000;
     }
 
     // setter/getter di id
     public function setId($id_number)
     {
-        $this->id = $id_number;
+        // formatto l'id
+        $this->id = $this->counter_id + $id_number;
     }
     public function getId()
     {
@@ -33,7 +36,10 @@ class Movie
     // setter/getter di title
     public function setTitle($title)
     {
-        $this->title = $title;
+        // controllo se la stringa è lunga al massimo 20 caratteri
+        if (strlen($title) < 20) {
+            $this->title = $title;
+        };
     }
     public function getTitle()
     {
@@ -43,7 +49,10 @@ class Movie
     // setter/getter di overview
     public function setOverview($overview)
     {
-        $this->overview = $overview;
+        // controllo se la stringa è lunga al massimo 500 caratteri
+        if (strlen($overview) < 500) {
+            $this->overview = $overview;
+        };
     }
     public function getOverview()
     {
@@ -53,7 +62,10 @@ class Movie
     // setter/getter di director
     public function setDirector($director)
     {
-        $this->director = $director;
+        // controllo se la stringa è lunga al massimo 20 caratteri
+        if (strlen($director) < 20) {
+            $this->director = $director;
+        };
     }
     public function getDirector()
     {
@@ -63,7 +75,10 @@ class Movie
     // setter/getter di year
     public function setYear($year)
     {
-        $this->year = $year;
+        // controllo che l'anno non sia negativo o superiore all'anno attuale
+        if ($year > 0 and $year <= date("Y")) {
+            $this->year = $year;
+        }
     }
     public function getYear()
     {
@@ -73,17 +88,29 @@ class Movie
     // setter/getter di language
     public function setLanguage($language)
     {
-        $this->language = $language;
+        // verifico che la lingua inserita sia tra quelle disponibili
+        if ($language === 'it' or 'en') {
+            $this->language = $language;
+        }
     }
     public function getLanguage()
     {
-        return $this->language;
+        // formato l'output della lingua
+        if ($this->language === 'it') {
+            return 'Italiano';
+        } elseif ($this->language === 'en') {
+            return 'Inglese';
+        }
     }
 
     // setter/getter di img_path
     public function setImgPath($img_path)
     {
-        $this->img_path = $img_path;
+        // verifico se il path inizia per "https://"
+        $string_correct_path = 'https://';
+        if (str_starts_with($img_path, $string_correct_path)) {
+            $this->img_path = $img_path;
+        }
     }
     public function getImgPath()
     {
@@ -93,7 +120,10 @@ class Movie
     // setter/getter di vote_avg
     public function setVoteAvg($vote_avg)
     {
-        $this->vote_avg = $vote_avg;
+        // verifico se il voto medio è inferiore a 5
+        if ($vote_avg <= 5) {
+            $this->vote_avg = $vote_avg;
+        }
     }
     public function getVoteAvg()
     {

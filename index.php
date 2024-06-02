@@ -5,7 +5,6 @@ require_once 'Models/movie.php';
 require_once 'Models/genre.php';
 require_once 'Models/actor.php';
 
-
 // ! PRIMO FILM
 // creo gli attori del primo film
 $movie1_actor1 = ["name" => "Russell", "surname" => "Crowe", "date_birth" => "'07'-04-1964"];
@@ -18,19 +17,18 @@ $genre_movie1->setGenre('Storia', 'Drammatico', '');
 
 // creo il primo film
 $movie1 = new Movie();
-$movie1->setId(1001);
+$movie1->setId(1);
 $movie1->setTitle('Il Gladiatore');
 $movie1->setOverview("Il generale romano Massimo Decimo Meridio, comandante dell'esercito del Nord, ha condotto ancora una volta i suoi legionari alla vittoria, ed ora spera di poter tornare alla sua famiglia. Ma il sovrano Marco Aurelio, oramai vecchio e stanco, gli chiede di assumere il comando dell'impero dopo la sua morte.");
 $movie1->setDirector('Ridley Scott');
 $movie1->setYear(2000);
-$movie1->setLanguage('it');
+$movie1->setLanguage('en');
 $movie1->setImgPath('https://www.postermania.it/2382-thickbox_default/locandina-il-gladiatore-ridley-scott-russell-crowe-joaquin-phoenix-cinema-cat1.jpg');
 $movie1->setVoteAvg(4.5);
 $movie1->genre = $genre_movie1;
 $movie1->cast->setActor($movie1_actor1);
 $movie1->cast->setActor($movie1_actor2);
 $movie1->cast->setActor($movie1_actor3);
-
 
 // stampo i dati del primo film
 var_dump($movie1->getId());
@@ -57,7 +55,7 @@ $genre_movie2->setGenre('Drammatico', 'Guerra', 'Classico');
 
 // creo il secondo film
 $movie2 = new Movie();
-$movie2->setId(1002);
+$movie2->setId(2);
 $movie2->setTitle('La Vita è Bella');
 $movie2->setOverview("Durante la dittatura fascista, Guido Orefice, giovane ebreo trasferitosi nella campagna toscana, conosce una maestra elementare, Dora, e con lei costruisce una famiglia. L'aggravarsi delle Leggi Razziali e i rastrellamenti nazisti portano l'uomo ad essere deportato in campo di concentramento con il figlioletto Giosuè. Per proteggere il piccolo dagli orrori dello sterminio, Guido costruisce eroicamente un elaborato mondo di vertiginose fantasie.");
 $movie1->setDirector('Roberto Benigni');
