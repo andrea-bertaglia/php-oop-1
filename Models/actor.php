@@ -15,8 +15,10 @@ class Actor
     {
         $this->actors[] = $actor;
     }
-    public function getActor()
+    public function getActor($i)
     {
-        return $this->actors;
+        if (isset($this->actors[$i])) {
+            return $this->actors[$i]['name'] . ' ' . $this->actors[$i]['surname'];
+        }
     }
 }
