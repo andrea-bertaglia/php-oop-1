@@ -1,9 +1,9 @@
 <?php
 
 // importo le classi
-require_once 'Models/movie.php';
-require_once 'Models/genre.php';
-require_once 'Models/actor.php';
+require_once __DIR__ . '/Models/movie.php';
+require_once __DIR__ . '/Models/genre.php';
+require_once __DIR__ . '/Models/actor.php';
 
 // ! PRIMO FILM
 // creo gli attori del primo film
